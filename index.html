@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JauriodeV1 - Unblocked Games</title>
+    <title>Lee County Schools - Unblocked Games</title>
     <style>
         * {
             margin: 0;
@@ -12,18 +12,19 @@
         }
 
         :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --text-light: #eaeaea;
-            --text-muted: #a8a8a8;
-            --border: #2a2a3e;
+            --primary: #0d1b2a;
+            --secondary: #1a2f45;
+            --accent: #2a4a6a;
+            --highlight: #ff6b35;
+            --success: #4ecdc4;
+            --text-light: #f0f0f0;
+            --text-muted: #b0b0b0;
+            --border: #2a3f55;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2f45 100%);
             color: var(--text-light);
             overflow-x: hidden;
         }
@@ -32,15 +33,15 @@
         .header {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
             padding: 1.5rem 2rem;
-            border-bottom: 2px solid var(--highlight);
+            border-bottom: 3px solid var(--highlight);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .header-content {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -48,27 +49,49 @@
             gap: 2rem;
         }
 
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #e94560, #ff6b9d);
+            background: linear-gradient(135deg, #ff6b35, #ffa500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: #4ecdc4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .search-bar {
             flex: 1;
-            max-width: 400px;
+            max-width: 450px;
         }
 
         .search-bar input {
             width: 100%;
-            padding: 0.8rem 1.2rem;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 0.9rem 1.3rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
             color: var(--text-light);
             font-size: 0.95rem;
             transition: all 0.3s ease;
@@ -81,8 +104,16 @@
         .search-bar input:focus {
             outline: none;
             border-color: var(--highlight);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #4ecdc4;
         }
 
         .menu-toggle {
@@ -90,116 +121,149 @@
             background: none;
             border: none;
             color: var(--highlight);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
         }
 
         /* Main Container */
         .container {
             display: flex;
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             gap: 0;
-            min-height: calc(100vh - 80px);
+            min-height: calc(100vh - 100px);
         }
 
         /* Sidebar */
         .sidebar {
-            width: 250px;
+            width: 280px;
             background: var(--secondary);
-            border-right: 1px solid var(--border);
-            padding: 1.5rem 0;
+            border-right: 2px solid var(--border);
+            padding: 2rem 0;
             overflow-y: auto;
-            max-height: calc(100vh - 80px);
+            max-height: calc(100vh - 100px);
             position: sticky;
             top: 80px;
         }
 
         .sidebar-section {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .sidebar-title {
             font-size: 0.75rem;
             text-transform: uppercase;
-            color: var(--text-muted);
-            padding: 0.5rem 1.5rem;
-            letter-spacing: 1px;
-            font-weight: 600;
+            color: var(--highlight);
+            padding: 0.7rem 1.8rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
         }
 
         .sidebar-item {
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             color: var(--text-light);
             cursor: pointer;
-            transition: all 0.2s ease;
-            border-left: 3px solid transparent;
+            transition: all 0.25s ease;
+            border-left: 4px solid transparent;
             font-size: 0.95rem;
+            position: relative;
         }
 
         .sidebar-item:hover {
-            background: rgba(233, 69, 96, 0.1);
+            background: rgba(255, 107, 53, 0.1);
             border-left-color: var(--highlight);
-            padding-left: 1.2rem;
+            padding-left: 1.4rem;
+            color: var(--highlight);
         }
 
         .sidebar-item.active {
-            background: rgba(233, 69, 96, 0.15);
+            background: rgba(255, 107, 53, 0.2);
             border-left-color: var(--highlight);
             color: var(--highlight);
+            font-weight: 600;
         }
 
         /* Main Content */
         .main-content {
             flex: 1;
-            padding: 2rem;
+            padding: 2.5rem;
             overflow-y: auto;
+            background: linear-gradient(to bottom, rgba(42, 74, 106, 0.1), transparent);
+        }
+
+        .announcement-banner {
+            background: linear-gradient(135deg, var(--highlight), #ffa500);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .announcement-banner h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .announcement-banner p {
+            font-size: 0.95rem;
+            opacity: 0.95;
         }
 
         .welcome-section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .welcome-section h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--highlight), #ff6b9d);
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(135deg, var(--highlight), #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 700;
         }
 
         .welcome-section p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
         }
 
-        /* Game Grid */
+        /* Games Section */
         .games-section {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         .games-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            margin-bottom: 1.8rem;
             color: var(--text-light);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--highlight);
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1.5rem;
         }
 
         .game-card {
             background: linear-gradient(135deg, var(--secondary), var(--accent));
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.2rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -209,38 +273,48 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, transparent, rgba(233, 69, 96, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.2), transparent);
+            transition: left 0.5s ease;
         }
 
         .game-card:hover {
             border-color: var(--highlight);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.25);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.35);
         }
 
         .game-card:hover::before {
-            opacity: 1;
+            left: 100%;
         }
 
         .game-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.8rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .game-card:hover .game-icon {
+            animation: float 1s ease-in-out infinite;
         }
 
         .game-name {
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 1rem;
             color: var(--text-light);
             position: relative;
             z-index: 1;
+            line-height: 1.3;
         }
 
-        /* Game Player */
+        /* Game Player Modal */
         .game-player {
             display: none;
             position: fixed;
@@ -248,9 +322,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
+            background: rgba(0, 0, 0, 0.96);
+            z-index: 2000;
             padding: 1rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .game-player.active {
@@ -264,34 +344,42 @@
             align-items: center;
             margin-bottom: 1rem;
             gap: 1rem;
+            background: var(--secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--highlight);
         }
 
         .player-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--highlight);
             flex: 1;
+            font-weight: 700;
         }
 
         .close-btn {
             background: var(--highlight);
             border: none;
             color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s ease;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .close-btn:hover {
-            background: #ff5a7a;
+            background: #ff5a1f;
+            transform: scale(1.05);
         }
 
         .player-frame {
             flex: 1;
-            border: 2px solid var(--border);
-            border-radius: 8px;
+            border: 3px solid var(--border);
+            border-radius: 12px;
             overflow: hidden;
+            background: black;
         }
 
         .player-frame iframe {
@@ -300,19 +388,11 @@
             border: none;
         }
 
-        /* Hidden Game Player (when embedding from blob) */
-        .embedded-player {
-            width: 100%;
-            height: 700px;
-            border: none;
-            border-radius: 8px;
-        }
-
         /* Footer */
         .footer {
             background: var(--secondary);
-            border-top: 1px solid var(--border);
-            padding: 1.5rem 2rem;
+            border-top: 2px solid var(--border);
+            padding: 2rem;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
@@ -320,9 +400,21 @@
 
         .footer p {
             margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .footer-highlight {
+            color: var(--highlight);
+            font-weight: 600;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -332,10 +424,11 @@
                 width: 100%;
                 max-height: none;
                 border-right: none;
-                border-bottom: 1px solid var(--border);
+                border-bottom: 2px solid var(--border);
                 position: relative;
                 top: 0;
                 display: none;
+                padding: 1.5rem 0;
             }
 
             .sidebar.active {
@@ -360,18 +453,31 @@
                 max-width: 100%;
             }
 
+            .header-info {
+                display: none;
+            }
+
             .welcome-section h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .main-content {
-                padding: 1rem;
+                padding: 1.5rem;
+            }
+
+            .player-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .close-btn {
+                width: 100%;
             }
         }
 
-        /* Scrollbar Styling */
+        /* Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
@@ -380,17 +486,16 @@
 
         ::-webkit-scrollbar-thumb {
             background: var(--accent);
-            border-radius: 4px;
+            border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
             background: var(--highlight);
         }
 
-        /* No games message */
         .no-games {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             color: var(--text-muted);
             font-size: 1.1rem;
         }
@@ -400,9 +505,18 @@
     <!-- Header -->
     <div class="header">
         <div class="header-content">
-            <div class="logo">🎮 JauriodeV1</div>
+            <div class="logo-section">
+                <div class="logo-icon">🎓</div>
+                <div class="logo-text">
+                    <div class="logo">Lee County Schools</div>
+                    <div class="logo-subtitle">Educational Games Portal</div>
+                </div>
+            </div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search games...">
+            </div>
+            <div class="header-info">
+                <span>📍 Lee County Schools District</span>
             </div>
             <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
@@ -413,34 +527,48 @@
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-section">
-                <div class="sidebar-title">Categories</div>
+                <div class="sidebar-title">📚 Categories</div>
                 <div class="sidebar-item active" data-category="all">All Games</div>
-                <div class="sidebar-item" data-category="action">Action</div>
-                <div class="sidebar-item" data-category="puzzle">Puzzle</div>
-                <div class="sidebar-item" data-category="sports">Sports</div>
-                <div class="sidebar-item" data-category="strategy">Strategy</div>
-                <div class="sidebar-item" data-category="casual">Casual</div>
+                <div class="sidebar-item" data-category="math">Math Games</div>
+                <div class="sidebar-item" data-category="language">Language Arts</div>
+                <div class="sidebar-item" data-category="science">Science</div>
+                <div class="sidebar-item" data-category="puzzle">Puzzle & Logic</div>
+                <div class="sidebar-item" data-category="typing">Typing Practice</div>
+                <div class="sidebar-item" data-category="casual">Casual Fun</div>
             </div>
 
             <div class="sidebar-section">
-                <div class="sidebar-title">Popular</div>
-                <div class="sidebar-item" data-game="flappy-bird">Flappy Bird</div>
-                <div class="sidebar-item" data-game="2048">2048</div>
-                <div class="sidebar-item" data-game="snake">Snake</div>
-                <div class="sidebar-item" data-game="pacman">Pac-Man</div>
+                <div class="sidebar-title">⭐ Most Popular</div>
+                <div class="sidebar-item" data-game="typing-master">Typing Master</div>
+                <div class="sidebar-item" data-game="math-quest">Math Quest</div>
+                <div class="sidebar-item" data-game="word-search">Word Search</div>
+                <div class="sidebar-item" data-game="geography-pro">Geography Pro</div>
+                <div class="sidebar-item" data-game="science-quiz">Science Quiz</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">ℹ️ Info</div>
+                <div class="sidebar-item" data-game="about">About This Portal</div>
+                <div class="sidebar-item" data-game="guidelines">Guidelines</div>
+                <div class="sidebar-item" data-game="contact">Contact Support</div>
             </div>
         </div>
 
         <!-- Main Content -->
         <div class="main-content">
+            <div class="announcement-banner">
+                <h3>📢 Welcome to Lee County Schools Games Portal!</h3>
+                <p>Play educational and fun games during your break time. Remember: Learning comes first! 🎯</p>
+            </div>
+
             <div class="welcome-section">
-                <h1>Welcome to JauriodeV1</h1>
-                <p>🎯 Your ultimate destination for unblocked games. Play anytime, anywhere!</p>
+                <h1>🎮 Discover Educational Games</h1>
+                <p>Engage your mind with our collection of educational games designed for students. Improve your skills in math, language arts, typing, and more while having fun!</p>
             </div>
 
             <!-- All Games Section -->
             <div class="games-section">
-                <h2 id="sectionTitle">All Games</h2>
+                <h2>🎯 <span id="sectionTitle">All Games</span></h2>
                 <div class="games-grid" id="gamesGrid">
                     <!-- Games will be populated here by JavaScript -->
                 </div>
@@ -452,22 +580,126 @@
     <div class="game-player" id="gamePlayer">
         <div class="player-header">
             <div class="player-title" id="playerTitle">Game Title</div>
-            <button class="close-btn" onclick="closeGame()">Close Game</button>
+            <button class="close-btn" onclick="closeGame()">✕ Close Game</button>
         </div>
         <div class="player-frame">
-            <iframe id="gameFrame" class="embedded-player"></iframe>
+            <iframe id="gameFrame" class="embedded-player" allow="fullscreen"></iframe>
         </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <p>⏰ Please play only during breaks or after school — learning comes first! 📚</p>
-        <p>&copy; 2024 JauriodeV1 - Unblocked Games Portal</p>
+        <p><span class="footer-highlight">⏰ Play Time Policy:</span> Please enjoy games only during breaks or after school hours. Academic learning is our priority! 📚</p>
+        <p>&copy; 2024 Lee County Schools District - Educational Games Portal</p>
+        <p>Questions? Contact your teacher or school administration</p>
     </div>
 
     <script>
-        // Game Database - Add your games here
+        // Game Database - Educational Games
         const games = [
+            // Math Games
+            {
+                name: "Math Quest",
+                category: "math",
+                icon: "🔢",
+                url: "https://classroom6x.org/games/2048"
+            },
+            {
+                name: "Number Master",
+                category: "math",
+                icon: "🧮",
+                url: "https://classroom6x.org/games/math-duck"
+            },
+            {
+                name: "Quick Math",
+                category: "math",
+                icon: "➕",
+                url: "https://classroom6x.org/games/quick-math"
+            },
+
+            // Language Arts
+            {
+                name: "Word Search",
+                category: "language",
+                icon: "📖",
+                url: "https://classroom6x.org/games/word-search"
+            },
+            {
+                name: "Spelling Bee",
+                category: "language",
+                icon: "🐝",
+                url: "https://classroom6x.org/games/spelling-bee"
+            },
+            {
+                name: "Hangman",
+                category: "language",
+                icon: "🎮",
+                url: "https://classroom6x.org/games/hangman"
+            },
+
+            // Science
+            {
+                name: "Science Quiz",
+                category: "science",
+                icon: "🔬",
+                url: "https://classroom6x.org/games/science-quiz"
+            },
+            {
+                name: "Body Systems",
+                category: "science",
+                icon: "🧬",
+                url: "https://classroom6x.org/games/body-systems"
+            },
+            {
+                name: "Periodic Table",
+                category: "science",
+                icon: "⚛️",
+                url: "https://classroom6x.org/games/periodic-table"
+            },
+
+            // Puzzle & Logic
+            {
+                name: "Sudoku",
+                category: "puzzle",
+                icon: "🧩",
+                url: "https://classroom6x.org/games/sudoku"
+            },
+            {
+                name: "Chess",
+                category: "puzzle",
+                icon: "♟️",
+                url: "https://classroom6x.org/games/chess"
+            },
+            {
+                name: "Tetris",
+                category: "puzzle",
+                icon: "🧱",
+                url: "https://classroom6x.org/games/tetris"
+            },
+
+            // Typing Practice
+            {
+                name: "Typing Master",
+                category: "typing",
+                icon: "⌨️",
+                url: "https://classroom6x.org/games/typing-master"
+            },
+            {
+                name: "Speed Typing",
+                category: "typing",
+                icon: "⚡",
+                url: "https://classroom6x.org/games/speed-typing"
+            },
+
+            // Geography
+            {
+                name: "Geography Pro",
+                category: "science",
+                icon: "🌍",
+                url: "https://classroom6x.org/games/geography"
+            },
+
+            // Casual Fun
             {
                 name: "Flappy Bird",
                 category: "casual",
@@ -475,94 +707,28 @@
                 url: "https://classroom6x.org/games/flappy-bird"
             },
             {
-                name: "2048",
-                category: "puzzle",
-                icon: "🔢",
-                url: "https://classroom6x.org/games/2048"
-            },
-            {
-                name: "Snake",
+                name: "Snake Game",
                 category: "casual",
                 icon: "🐍",
                 url: "https://classroom6x.org/games/snake"
             },
             {
                 name: "Pac-Man",
-                category: "action",
+                category: "casual",
                 icon: "👾",
                 url: "https://classroom6x.org/games/pacman"
             },
             {
                 name: "Dino Run",
-                category: "action",
+                category: "casual",
                 icon: "🦕",
                 url: "https://classroom6x.org/games/dino-run"
-            },
-            {
-                name: "Tetris",
-                category: "puzzle",
-                icon: "🧩",
-                url: "https://classroom6x.org/games/tetris"
-            },
-            {
-                name: "Chess",
-                category: "strategy",
-                icon: "♟️",
-                url: "https://classroom6x.org/games/chess"
-            },
-            {
-                name: "Basketball",
-                category: "sports",
-                icon: "🏀",
-                url: "https://classroom6x.org/games/basketball"
-            },
-            {
-                name: "Football",
-                category: "sports",
-                icon: "🏈",
-                url: "https://classroom6x.org/games/football"
-            },
-            {
-                name: "Angry Birds",
-                category: "casual",
-                icon: "🐦",
-                url: "https://classroom6x.org/games/angry-birds"
             },
             {
                 name: "Cookie Clicker",
                 category: "casual",
                 icon: "🍪",
                 url: "https://classroom6x.org/games/cookie-clicker"
-            },
-            {
-                name: "Agar.io",
-                category: "action",
-                icon: "⭕",
-                url: "https://classroom6x.org/games/agario"
-            },
-            {
-                name: "Run 3",
-                category: "action",
-                icon: "🏃",
-                url: "https://classroom6x.org/games/run-3"
-            },
-            {
-                name: "Fireboy & Watergirl",
-                category: "puzzle",
-                icon: "🔥",
-                url: "https://classroom6x.org/games/fireboy-watergirl"
-            },
-            {
-                name: "Super Mario",
-                category: "action",
-                icon: "🍄",
-                url: "https://classroom6x.org/games/super-mario"
-            },
-            {
-                name: "Racing",
-                category: "sports",
-                icon: "🏎️",
-                url: "https://classroom6x.org/games/racing"
             }
         ];
 
@@ -580,7 +746,7 @@
             const gamesGrid = document.getElementById('gamesGrid');
             
             if (gamesToRender.length === 0) {
-                gamesGrid.innerHTML = '<div class="no-games">No games found. Try a different search.</div>';
+                gamesGrid.innerHTML = '<div class="no-games">No games found. Try a different search or category.</div>';
                 return;
             }
 
@@ -641,24 +807,19 @@
                     
                     const titles = {
                         'all': 'All Games',
-                        'action': 'Action Games',
-                        'puzzle': 'Puzzle Games',
-                        'sports': 'Sports Games',
-                        'strategy': 'Strategy Games',
-                        'casual': 'Casual Games'
+                        'math': 'Math Games',
+                        'language': 'Language Arts Games',
+                        'science': 'Science Games',
+                        'puzzle': 'Puzzle & Logic Games',
+                        'typing': 'Typing Practice',
+                        'casual': 'Casual Fun Games'
                     };
                     document.getElementById('sectionTitle').textContent = titles[currentCategory];
                     filterGames();
-                });
-            });
-
-            // Game shortcuts
-            document.querySelectorAll('[data-game]').forEach(item => {
-                item.addEventListener('click', () => {
-                    const gameName = item.dataset.game;
-                    const game = games.find(g => g.name.toLowerCase().replace(/\s+/g, '-') === gameName);
-                    if (game) {
-                        playGame(game.name, game.url);
+                    
+                    // Close sidebar on mobile
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('sidebar').classList.remove('active');
                     }
                 });
             });
@@ -667,13 +828,6 @@
             document.getElementById('menuToggle').addEventListener('click', () => {
                 document.getElementById('sidebar').classList.toggle('active');
             });
-
-            // Close sidebar when game card is clicked on mobile
-            if (window.innerWidth <= 768) {
-                document.getElementById('gamesGrid').addEventListener('click', () => {
-                    document.getElementById('sidebar').classList.remove('active');
-                });
-            }
 
             // Close game on Escape key
             document.addEventListener('keydown', (e) => {
